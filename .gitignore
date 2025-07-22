@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+
+# Node
+node_modules/
+.next/
+dist/
+.env.local
+.env.*
+!.env.example
+
+# Mac
+.DS_Store
+
+# Images/uploads
+backend/uploaded_photos/
