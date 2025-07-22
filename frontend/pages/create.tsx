@@ -137,7 +137,7 @@ export default function CreatePetProfile() {
         <div className="mt-8">
           <div ref={profileRef}>
             <PetProfile
-              photoUrl={photoUrl ? `http://localhost:8000${photoUrl}` : "/api/placeholder/80/80"}
+              photoUrl={photoUrl ? `${process.env.NEXT_PUBLIC_API_URL}${photoUrl}` : "/api/placeholder/80/80"}
               name={petName}
               headline={result.headline}
               workExperience={result.work_experience}
