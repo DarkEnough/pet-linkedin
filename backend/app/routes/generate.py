@@ -11,7 +11,7 @@ router = APIRouter()
 ip_request_log = defaultdict(str)
 
 # Replace with your actual public IP if needed
-DEV_IPS = {"127.0.0.1", "::1"}  # Add your public IP as a string if you want
+DEV_IPS = {"127.0.0.1", "::1", "97.118.230.83"}  # Add your public IP as a string if you want
 
 @router.post("/generate_profile", response_model=GenerateProfileResponse)
 async def generate_profile(payload: GenerateProfileRequest, request: Request):
