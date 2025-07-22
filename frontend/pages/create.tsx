@@ -19,10 +19,11 @@ export default function CreatePetProfile() {
     e.preventDefault();
     setLoading(true);
     let uploadedPhotoUrl = null;
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL;
     if (photo) {
       const formData = new FormData();
       formData.append("file", photo);
-      const uploadRes = await fetch("http://localhost:8000/upload_photo", {
+      const uploadRes = await fetch(`${apiUrl}/upload_photo`, {
         method: "POST",
         body: formData,
       });
@@ -30,7 +31,7 @@ export default function CreatePetProfile() {
       uploadedPhotoUrl = uploadData.url;
       setPhotoUrl(uploadedPhotoUrl);
     }
-    const res = await fetch("http://localhost:8000/generate_profile", {
+    const res = await fetch(`${apiUrl}/generate_profile`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
