@@ -51,7 +51,7 @@ async def generate_pet_profile(payload: GenerateProfileRequest) -> GenerateProfi
             "max_tokens": 700,
             "temperature": 1.1,
         }
-        response = requests.post(url, headers=headers, json=data)
+        response = requests.post(url, headers=headers, json=data, timeout=60)
         response.raise_for_status()
         content = response.json()["choices"][0]["message"]["content"]
         # Extract JSON from code block if present
